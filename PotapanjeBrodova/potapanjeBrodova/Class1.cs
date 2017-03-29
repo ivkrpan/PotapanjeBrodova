@@ -8,5 +8,11 @@ namespace potapanjeBrodova
 {
     public class Class1
     {
+       static void Main() {
+
+         Mreza m = new Mreza(5, 1);
+         Console.WriteLine(m.DajNizoveSlobodnihPolja(3).Count());
+            Console.ReadLine();
+        }
     }
 }

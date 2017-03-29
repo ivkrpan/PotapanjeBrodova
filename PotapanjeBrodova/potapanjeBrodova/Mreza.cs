@@ -52,6 +52,56 @@ namespace potapanjeBrodova
             polja[p.Redak, p.Stupac] = null;
         }
 
+       
+        public IEnumerable<IEnumerable<Polje>> DajNizoveSlobodnihPolja(int duljinaNiza) {
+            bool nizOK;
+            List<IEnumerable<Polje>> nizovi = new List<IEnumerable<Polje>>();
+            List<Polje> niz = new List<Polje>();
+            foreach (var p in DajSlobodnaPolja())
+
+            {
+            //redak
+             nizOK = true;
+                for (int i = 0; i < duljinaNiza; i++)
+                {
+                    if (p.Redak + i < redaka)
+                    {
+                        Polje testP = polja[p.Redak + i, p.Stupac];
+                        if (!DajSlobodnaPolja().Contains(testP))
+                        {
+                            nizOK = false;
+                        } else niz.Add(testP);
+                      
+                    } else nizOK = false;
+         
+                }
+                if (nizOK == true) nizovi.Add(niz);
+                niz.Clear();
+                //stupac
+                nizOK = true;
+                for (int i = 0; i < duljinaNiza; i++)
+                {
+                    if (p.Stupac + i < stupaca)
+                    {
+                        Polje testP = polja[p.Redak , p.Stupac+i];
+                        if (!DajSlobodnaPolja().Contains(testP))
+                        {
+                            nizOK = false;
+                        }
+                        else niz.Add(testP);
+
+                    }
+                    else nizOK = false;
+
+                }
+                if (nizOK == true) nizovi.Add(niz);
+                niz.Clear();
+
+            }
+            //  throw new NotImplementedException();
+            return nizovi;
+        }
+
         private Polje[,] polja;
     }
 }
