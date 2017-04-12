@@ -8,8 +8,10 @@ namespace potapanjeBrodova
 {
     public class Mreza
     {
-        private int stupaca;
-        private int redaka;
+      //  private int stupaca;
+        //private int redaka;
+        public readonly int redaka;
+        public readonly int stupaca;
 
         public Mreza(int redaka, int stupaca)
         {
@@ -76,7 +78,8 @@ namespace potapanjeBrodova
          
                 }
                 if (nizOK == true) nizovi.Add(niz);
-                niz.Clear();
+                //niz.Clear();
+                niz = new List<Polje>();
                 //stupac
                 nizOK = true;
                 for (int i = 0; i < duljinaNiza; i++)
@@ -95,7 +98,7 @@ namespace potapanjeBrodova
 
                 }
                 if (nizOK == true) nizovi.Add(niz);
-                niz.Clear();
+                niz = new List<Polje>();
 
             }
             //  throw new NotImplementedException();
