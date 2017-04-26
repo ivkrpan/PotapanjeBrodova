@@ -15,7 +15,14 @@ namespace potapanjeBrodova
 
         public RezultatGadjanja Gadjaj(Polje polje)
         {
-            throw new NotImplementedException();
+            foreach (Brod brod in brodovi) {
+               var rezultat = brod.Gadjaj(polje);
+                if (rezultat != RezultatGadjanja.Promašaj) {
+                    return rezultat;
+                }
+            }
+            return RezultatGadjanja.Promašaj;
+            
         }
 
         public int BrojBrodova {
