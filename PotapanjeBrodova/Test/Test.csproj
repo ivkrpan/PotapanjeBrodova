@@ -57,7 +57,7 @@
     <Compile Include="TestMreze.cs" />
     <Compile Include="TestRedaFiksneDuljine.cs" />
     <Compile Include="TestFlote.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="TestBroda.cs" />
     <Compile Include="TestTerminatoraPolja.cs" />
     <Compile Include="TestBrodograditelja.cs" />
   </ItemGroup>
