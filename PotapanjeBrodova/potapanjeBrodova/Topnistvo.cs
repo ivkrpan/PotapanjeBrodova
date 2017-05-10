@@ -19,6 +19,7 @@ namespace potapanjeBrodova
             mreza = new Mreza(redaka, stupaca);
             this.duljineBrodova = new List<int>(duljineBrodova);
             TaktikaGadjanja = TaktikaGadjanja.Nasumicno;
+            pucac = new SlucajniPucac(mreza, duljineBrodova.First()) ;
     }
 
         public void ObradiGadjanje(RezultatGadjanja rezultat) {
@@ -66,6 +67,6 @@ namespace potapanjeBrodova
 
       private  Mreza mreza;
       private  List<int> duljineBrodova;
-     
+        IPucac pucac;
     }
 }
