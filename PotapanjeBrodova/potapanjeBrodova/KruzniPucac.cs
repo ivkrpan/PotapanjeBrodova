@@ -9,6 +9,12 @@ namespace potapanjeBrodova
     public class KruzniPucac : IPucac
 
     {
+
+        public KruzniPucac(Mreza mreza, Polje pogodjeno, int duljinaBroda) {
+            this.mreza= mreza;
+            this. prvoPogodjenoPolje = pogodjeno;
+            this.duljinaBroda=duljinaBroda;
+        }
         public Polje Gadjaj()
         {
             throw new NotImplementedException();
@@ -23,5 +29,9 @@ namespace potapanjeBrodova
         {
             throw new NotImplementedException();
         }
+
+        private Mreza mreza;
+        private Polje prvoPogodjenoPolje;
+        private int duljinaBroda;
     }
 }

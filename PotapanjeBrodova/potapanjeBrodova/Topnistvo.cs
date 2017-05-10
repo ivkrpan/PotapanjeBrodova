@@ -54,12 +54,18 @@ namespace potapanjeBrodova
 
        private  void PromijeniTaktikuUKruzno() {
             TaktikaGadjanja = TaktikaGadjanja.Kruzno;
+            Polje pogodjeno = pucac.PogodjanaPolja.First();
+            pucac = new KruzniPucac(mreza,pogodjeno,duljineBrodova.First());
+         
         }
        private  void PromijeniTaktikuULinijsko() {
             TaktikaGadjanja = TaktikaGadjanja.Linijsko;
+            var pogodjeno = pucac.PogodjanaPolja;
+            pucac = new LinijskiPucac(mreza, pogodjeno, duljineBrodova.First());
         }
        private  void PromijeniTaktikuUNasumicno() {
             TaktikaGadjanja = TaktikaGadjanja.Nasumicno;
+            pucac = new SlucajniPucac(mreza, duljineBrodova.First());
         }
 
 
@@ -67,6 +73,6 @@ namespace potapanjeBrodova
 
       private  Mreza mreza;
       private  List<int> duljineBrodova;
-        IPucac pucac;
+      private  IPucac pucac;
     }
 }

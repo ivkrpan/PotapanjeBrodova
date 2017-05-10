@@ -9,6 +9,14 @@ namespace potapanjeBrodova
     public class LinijskiPucac : IPucac
 
     {
+
+
+        public LinijskiPucac(Mreza mreza, IEnumerable<Polje> pogodjena, int duljinaBroda)
+        {
+            this.mreza = mreza;
+            this.pogodjenaPolja = pogodjena;
+            this.duljinaBroda = duljinaBroda;
+        }
         public Polje Gadjaj()
         {
             throw new NotImplementedException();
@@ -23,5 +31,9 @@ namespace potapanjeBrodova
         {
             throw new NotImplementedException();
         }
+
+        private Mreza mreza;
+        private IEnumerable<Polje> pogodjenaPolja;
+        private int duljinaBroda;
     }
 }
