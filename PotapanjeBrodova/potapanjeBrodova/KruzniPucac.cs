@@ -25,10 +25,7 @@ namespace potapanjeBrodova
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Polje> PogodjanaPolja()
-        {
-            throw new NotImplementedException();
-        }
+
 
         private Mreza mreza;
         private Polje prvoPogodjenoPolje;
@@ -40,6 +37,16 @@ namespace potapanjeBrodova
             {
                 throw new NotImplementedException();
             }
+        }
+
+        private IEnumerable<Polje> DajKandidate() {
+            List<Polje> kandidati = new List<Polje>();
+            
+            foreach (Smjer smjer in Enum.GetValues(typeof(Smjer))) {
+            var  lista= mreza.DajNizSlobodnihPolja(prvoPogodjenoPolje, smjer);
+
+            }
+            return kandidati;
         }
     }
 }

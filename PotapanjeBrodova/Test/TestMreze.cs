@@ -120,5 +120,38 @@ namespace Test
         }
 
 
+        [TestMethod]
+        public void Mreza_DajNizoveSlobodnihPoljaDoPoljaVracaDvaPoljaDesno()
+        {
+            Mreza m = new Mreza(5,5);
+            var polja = m.DajNizSlobodnihPolja(new Polje (2,2), Smjer.Desno);
+            Assert.AreEqual(2,polja.Count());
+            Assert.AreEqual(new Polje(2, 3), polja.First());
+        }
+
+        [TestMethod]
+        public void Mreza_DajNizoveSlobodnihPoljaDoPoljaVracaDvaPoljaDolje()
+        {
+            Mreza m = new Mreza(5, 5);
+            var polja = m.DajNizSlobodnihPolja(new Polje(2, 2), Smjer.Dolje);
+            Assert.AreEqual(2, polja.Count());
+            Assert.AreEqual(new Polje(3, 2), polja.First());
+        }
+        [TestMethod]
+        public void Mreza_DajNizoveSlobodnihPoljaDoPoljaVracaDvaPoljaLijevo()
+        {
+            Mreza m = new Mreza(5, 5);
+            var polja = m.DajNizSlobodnihPolja(new Polje(2, 2), Smjer.Lijevo);
+            Assert.AreEqual(2, polja.Count());
+            Assert.AreEqual(new Polje(2, 1), polja.First());
+        }
+        [TestMethod]
+        public void Mreza_DajNizoveSlobodnihPoljaDoPoljaVracaDvaPoljaGore()
+        {
+            Mreza m = new Mreza(5, 5);
+            var polja = m.DajNizSlobodnihPolja(new Polje(2, 2), Smjer.Gore);
+            Assert.AreEqual(2, polja.Count());
+            Assert.AreEqual(new Polje(1, 2), polja.First());
+        }
     }
 }
