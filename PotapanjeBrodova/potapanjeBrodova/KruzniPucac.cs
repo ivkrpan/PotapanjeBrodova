@@ -33,5 +33,13 @@ namespace potapanjeBrodova
         private Mreza mreza;
         private Polje prvoPogodjenoPolje;
         private int duljinaBroda;
+
+        IEnumerable<Polje> IPucac.PogodjanaPolja
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
